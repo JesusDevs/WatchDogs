@@ -10,12 +10,10 @@ data class DogApiResponseItem(
     val breedGroup: String,
     @SerializedName("country_code")
     val countryCode: String,
-    @SerializedName("height")
-    val height: Height,
+
     @SerializedName("id")
     val id: Int,
-    @SerializedName("image")
-    val image: Image,
+
     @SerializedName("life_span")
     val lifeSpan: String,
     @SerializedName("name")
@@ -26,6 +24,5 @@ data class DogApiResponseItem(
     val referenceImageId: String,
     @SerializedName("temperament")
     val temperament: String,
-    @SerializedName("weight")
-    val weight: Weight
+
 )

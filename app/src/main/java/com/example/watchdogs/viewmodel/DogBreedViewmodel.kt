@@ -1,5 +1,8 @@
 package com.example.watchdogs.viewmodel
 
+import android.app.Application
+import android.util.Log
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,20 +10,20 @@ import com.example.watchdogs.pojo.DogApiResponseItem
 import com.example.watchdogs.remote.RepoDog
 import kotlinx.coroutines.launch
 
-class DogBreedViewmodel : ViewModel() {
+class DogBreedViewmodel(application: Application) : AndroidViewModel(application) {
 
 
-    private val repositoryDog : RepoDog
+    private val repositoryDog : RepoDog = RepoDog()
     val allDogData : LiveData<List<DogApiResponseItem>>
 
     init {
-        repositoryDog = RepoDog()
+
         allDogData = repositoryDog.liveDataDogoResponse
     }
 
-    fun getDogoData( attachBreed : Int, page : Int , limit :Int ) =viewModelScope.launch {
-
-        repositoryDog.getDogosFromInternetRepo(attachBreed,page,limit)
+    fun getDogoData( ) =viewModelScope.launch {
+        Log.d("viewmodel", "breeds + $")
+        repositoryDog.getDogosFromInternetRepo()
     }
 
 }
