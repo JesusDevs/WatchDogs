@@ -1,17 +1,21 @@
-package com.example.watchdogs.pojo
+package com.example.watchdogs.extensions
 
 
 import com.google.gson.annotations.SerializedName
 
-data class DogApiResponseItem(
+data class DogoItem(
     @SerializedName("bred_for")
     val bredFor: String,
     @SerializedName("breed_group")
     val breedGroup: String,
     @SerializedName("country_code")
     val countryCode: String,
+    @SerializedName("description")
+    val description: String,
     @SerializedName("height")
     val height: Height,
+    @SerializedName("history")
+    val history: String,
     @SerializedName("id")
     val id: Int,
     @SerializedName("image")

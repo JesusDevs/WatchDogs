@@ -36,9 +36,9 @@ class DogAdapter: RecyclerView.Adapter<DogAdapter.DogViewHolder>() {
     , View.OnClickListener{
 
         fun bindView (dogBreed: DogApiResponseItem){
-            binding.titlesBreed.text =dogBreed.bredFor.toString()
-           // binding.weight!!.text = dogBreed.weight.imperial
-           // binding.imageView.loadSvg(dogBreed.image.url)
+            binding.titlesBreed.text =dogBreed.name.toString()
+            binding.weight!!.text = dogBreed.weight.imperial
+            binding.imageView.loadSvg(dogBreed.image.url)
             itemView.setOnClickListener(this)
         }
         override fun onClick(v: View?) {

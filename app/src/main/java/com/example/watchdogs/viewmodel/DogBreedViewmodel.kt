@@ -17,13 +17,23 @@ class DogBreedViewmodel(application: Application) : AndroidViewModel(application
     val allDogData : LiveData<List<DogApiResponseItem>>
 
     init {
-
         allDogData = repositoryDog.liveDataDogoResponse
     }
 
-    fun getDogoData( ) =viewModelScope.launch {
+    fun getDogoData(value:Int,
+                    limit :Int,
+                    page :Int ) =viewModelScope.launch {
         Log.d("viewmodel", "breeds + $")
-        repositoryDog.getDogosFromInternetRepo()
-    }
+        repositoryDog.getDogosFromInternetRepo(
+            value,
+            limit,
+            page
+        )
 
+
+       /* fun getDogoData() = viewModelScope.launch {
+            Log.d("viewmodel", "breeds + $")
+            repositoryDog.getDogosFromInternetRepo()
+        }*/
+    }
 }

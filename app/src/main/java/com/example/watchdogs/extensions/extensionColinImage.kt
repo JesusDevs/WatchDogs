@@ -1,5 +1,6 @@
 package com.jesusdev.gamesfreepc.extensions
 
+import android.view.View
 import android.widget.ImageView
 import coil.ImageLoader
 import coil.decode.SvgDecoder
