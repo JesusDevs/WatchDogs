@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class DogOpcionB(
     @SerializedName("message")
-    val dog: Message,
+    val dog: DogList,
     @SerializedName("status")
     val status: String
 )

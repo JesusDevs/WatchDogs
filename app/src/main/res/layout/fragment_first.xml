@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".ui.FirstFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#D4F4F0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

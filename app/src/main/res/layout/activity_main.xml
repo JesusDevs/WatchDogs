@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="#2953C6"
             app:popupTheme="@style/Theme.WatchDogs.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
