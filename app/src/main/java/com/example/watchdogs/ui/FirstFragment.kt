@@ -48,25 +48,23 @@ class FirstFragment : Fragment() {
         //crear courutina
         lifecycleScope.launch(Dispatchers.IO) {
 
-        //get data pendiente crear metodo para pasar variables
-        mViewModel.getDogoData(10, 10, 0)
-
-        //observar data y setear adapter
-            launch(Dispatchers.IO){
-                mViewModel.allDogData.observe(viewLifecycleOwner, Observer {
-                    it.let {
-
-
-                        //actualizar valores del adapter
-                        adapter.update(it)
-                        Log.d("DATOS", "$it")
-                    }
-                })
-            }
+            //get data pendiente crear metodo para pasar variables
+            mViewModel.getDogoData(10, 10, 0)
 
         }
+        //observar data y setear adapter
+        mViewModel.allDogData.observe(viewLifecycleOwner, Observer {
+            it.let {
 
+
+                //actualizar valores del adapter
+                adapter.update(it)
+                Log.d("DATOS", "$it")
+            }
+        })
     }
+
+
 
 
     private fun setAdapter(adapter: DogAdapter) {
@@ -75,11 +73,7 @@ class FirstFragment : Fragment() {
         //pasar dato seleccionado al fragment detail
         selectItemFromAdapter(adapter)
 
-        mViewModel.allDogData .observe(viewLifecycleOwner, Observer {
-            it?.let {
-                adapter.update(it)
-            }
-        })
+
     }
         private fun setRecyclerView(adapter: DogAdapter) {
             binding.rvView2.layoutManager = LinearLayoutManager(context)
@@ -94,8 +88,15 @@ class FirstFragment : Fragment() {
 
     private fun selectItemFromAdapter(adapter: DogAdapter) {
         adapter.selectedItem().observe(viewLifecycleOwner, Observer {
-            //pasando data
+            //pasando data second fr
             val bundle = Bundle()
+            bundle.putString("name",it.name)
+            bundle.putString("breedFor",it.bredFor)
+            bundle.putString("img", it.image.url)
+            bundle.putString("lifeSpan",it.lifeSpan)
+            bundle.putString("origin",it.origin)
+            bundle.putInt("idBreed",it.id)
+
           //crear metodo id para traer mas fotos u otra consulta luego del Onclick
 
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)

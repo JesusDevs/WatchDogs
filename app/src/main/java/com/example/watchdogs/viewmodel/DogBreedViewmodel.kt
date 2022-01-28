@@ -20,20 +20,20 @@ class DogBreedViewmodel(application: Application) : AndroidViewModel(application
         allDogData = repositoryDog.liveDataDogoResponse
     }
 
-    fun getDogoData(value:Int,
+   fun getDogoData(value:Int,
                     limit :Int,
                     page :Int ) =viewModelScope.launch {
-        Log.d("viewmodel", "breeds + $")
+        Log.d("viewmodel", "breeds + ")
         repositoryDog.getDogosFromInternetRepo(
             value,
             limit,
-            page
-        )
+            page)
 
 
+}
        /* fun getDogoData() = viewModelScope.launch {
             Log.d("viewmodel", "breeds + $")
             repositoryDog.getDogosFromInternetRepo()
-        }*/
-    }
+
+    }*/
 }

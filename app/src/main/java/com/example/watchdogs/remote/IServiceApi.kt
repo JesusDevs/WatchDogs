@@ -8,16 +8,18 @@ import retrofit2.http.Query
 
 interface IServiceApi {
 
-    @GET("breeds")
-    suspend fun getDogosFromInternet(@Query("atachBreed") value:Int,
+   @GET("breeds")
+    suspend fun getDogosFromInternet(@Query("attachBreed") value:Int,
                                       @Query("limit") limit :Int,
                                       @Query("page") page :Int,
                                       @Header("x-api-key") apiKey: String ):
             Response<List<DogApiResponseItem>>
-   /* @GET("breeds")
-    suspend fun getDogosFromInternet():
-            Response<List<DogApiResponseItem>>*/
 
+
+   /*@GET("breeds")
+    suspend fun getDogosFromInternet():
+            Response<List<DogApiResponseItem>>
+*/
 
 
 
