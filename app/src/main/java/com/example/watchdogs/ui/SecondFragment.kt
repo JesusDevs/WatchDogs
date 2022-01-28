@@ -16,7 +16,7 @@ import com.jesusdev.gamesfreepc.extensions.loadSvg
 
 class SecondFragment : Fragment() {
 
-    private var _binding:FragmentDetailBinding? = null
+    private lateinit var binding:FragmentDetailBinding
     private val mViewModel : DogBreedViewmodel by activityViewModels()
 
 
@@ -26,9 +26,7 @@ class SecondFragment : Fragment() {
     var lifeSpan = ""
     var name: String = ""
     var breedFor : String = ""
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+
     //agregar Metodo Oncreate
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +39,7 @@ class SecondFragment : Fragment() {
             breedFor  = it.getString("breedFor", "")
             origin  = it.getString("origin", "")
 
+
         }
     }
     override fun onCreateView(
@@ -48,7 +47,7 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentDetailBinding.inflate(inflater, container, false)
+        binding = FragmentDetailBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -58,12 +57,12 @@ class SecondFragment : Fragment() {
 
 
         //binding view should
-
         binding.titleEd.text = name
         binding.imageDog.loadSvg(img)
         binding.description.text =lifeSpan
         binding.origin.text =origin
         binding.breefFor.text = breedFor
+        binding.lifeSpan.text= lifeSpan
 
         //button guardar fav , crear booleano de fav ,etc
         binding.guardarFav.setOnClickListener {
@@ -76,6 +75,5 @@ class SecondFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
     }
 }

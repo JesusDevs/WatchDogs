@@ -38,7 +38,7 @@ class DogAdapter: RecyclerView.Adapter<DogAdapter.DogViewHolder>() {
 
         fun bindView (dogBreed: DogApiResponseItem){
             var weight = "Weight : "
-            binding.titlesBreed.text =dogBreed.name
+            binding.titlesED.text =dogBreed.name
             binding.weight!!.text =dogBreed.weight.imperial
             binding.description.text = dogBreed.lifeSpan
             binding.imageView.loadSvg(dogBreed.image.url)
