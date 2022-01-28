@@ -124,7 +124,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#E2F3E2">
+                       >
 
                         <ImageView
                             android:id="@+id/imageView"
@@ -134,6 +134,7 @@
                             android:layout_marginTop="4dp"
                             android:layout_marginEnd="5dp"
                             android:layout_marginBottom="4dp"
+                            android:scaleType="fitCenter"
                             android:paddingLeft="2dp"
                             android:paddingRight="2dp"
                             app:layout_constraintBottom_toBottomOf="parent"

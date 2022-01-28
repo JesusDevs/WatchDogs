@@ -36,6 +36,7 @@ class FirstFragment : Fragment() {
     ): ConstraintLayout {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -85,7 +86,6 @@ class FirstFragment : Fragment() {
     private fun setAdapter(adapter: DogAdapter) {
         //reycler
         setRecyclerView(adapter)
-        //pasar dato seleccionado al fragment detail
 
 
     }
@@ -99,10 +99,6 @@ class FirstFragment : Fragment() {
                 )
             )
         }
-
-    private fun selectItemFromAdapter(adapter: DogAdapter) {
-
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

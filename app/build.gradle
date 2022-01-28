@@ -63,6 +63,10 @@ dependencies {
     implementation("io.coil-kt:coil-svg:1.2.1")
     //animaciones con loibreria lottie para splash screen
     implementation 'com.airbnb.android:lottie:4.2.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    //animaciones con loibreria lottie para splash screen
+    implementation 'com.airbnb.android:lottie:4.2.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }

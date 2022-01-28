@@ -1,9 +1,9 @@
-package com.example.watchdogs.extensions
+package com.example.watchdogs.pojo
 
 
 import com.google.gson.annotations.SerializedName
 
-data class Height(
+data class Weight(
     @SerializedName("imperial")
     val imperial: String,
     @SerializedName("metric")
