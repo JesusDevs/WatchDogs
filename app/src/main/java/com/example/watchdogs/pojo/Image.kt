@@ -1,4 +1,4 @@
-package com.example.watchdogs.extensions
+package com.example.watchdogs.pojo
 
 
 import com.google.gson.annotations.SerializedName
