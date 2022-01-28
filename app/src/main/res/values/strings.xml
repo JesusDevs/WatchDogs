@@ -13,4 +13,5 @@
     <string name="weight">weight</string>
     <string name="detalle" />
     <string name="breedgroup">breedgroup</string>
+    <string name="temperament">Temperament</string>
 </resources>

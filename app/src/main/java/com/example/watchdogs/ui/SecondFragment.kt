@@ -10,7 +10,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.watchdogs.R
 import com.example.watchdogs.databinding.FragmentDetailBinding
-import com.example.watchdogs.databinding.FragmentSecondBinding
 import com.example.watchdogs.viewmodel.DogBreedViewmodel
 import com.jesusdev.gamesfreepc.extensions.loadSvg
 
@@ -26,6 +25,8 @@ class SecondFragment : Fragment() {
     var lifeSpan = ""
     var name: String = ""
     var breedFor : String = ""
+    var temperament: String = ""
+    var weigth : String = ""
 
     //agregar Metodo Oncreate
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +39,8 @@ class SecondFragment : Fragment() {
             lifeSpan = it.getString("lifeSpan", "")
             breedFor  = it.getString("breedFor", "")
             origin  = it.getString("origin", "")
+            temperament  = it.getString("temperament", "")
+            weigth = it.getString("weight","")
 
 
         }
@@ -59,10 +62,11 @@ class SecondFragment : Fragment() {
         //binding view should
         binding.titleEd.text = name
         binding.imageDog.loadSvg(img)
-        binding.description.text =lifeSpan
-        binding.origin.text =origin
+        binding.weight.text = "Weight : " + weigth + " -Kg"
+        binding.origin.text ="País de Origin : "+origin
         binding.breefFor.text = breedFor
-        binding.lifeSpan.text= lifeSpan
+        binding.lifeSpan.text= "Promedio de vida : "+lifeSpan
+        binding.temperament.text = temperament
 
         //button guardar fav , crear booleano de fav ,etc
         binding.guardarFav.setOnClickListener {

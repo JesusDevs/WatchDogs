@@ -73,6 +73,8 @@ class FirstFragment : Fragment() {
             bundle.putString("lifeSpan",it.lifeSpan)
             bundle.putString("origin",it.origin)
             bundle.putInt("idBreed",it.id)
+            bundle.putString("temperament",it.temperament)
+            bundle.putString("weight",it.weight.metric)
 
             //crear metodo id para traer mas fotos u otra consulta luego del Onclick
 
