@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="@color/white"
+    android:background="#FFFFFF"
     tools:context=".ui.SecondFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
@@ -24,9 +25,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:autoText="true"
             android:text="TextView"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +49,7 @@
             android:id="@+id/breefFor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +80,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="9dp"
+                android:layout_marginEnd="24dp"
                 android:background="#C6D1D1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -92,18 +96,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:gravity="center"
                     android:lineSpacingExtra="12sp"
                     android:text="Detalles"
                     android:textAlignment="center"
                     android:textAllCaps="true"
-                    android:textColor="#F8F8F5"
+                    android:textColor="#0B613E"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -119,7 +126,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
 
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardImg"
@@ -205,10 +213,11 @@
 
                         <TextView
 
+                            android:id="@+id/DescriptionWeight"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:layout_marginTop="0dp"
 
+                            android:layout_marginTop="0dp"
                             android:gravity="center"
                             android:lineSpacingExtra="12sp"
                             android:text="@string/detalle"
@@ -301,7 +310,8 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <Button
             android:id="@+id/volver"

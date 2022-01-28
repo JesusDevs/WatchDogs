@@ -3,7 +3,7 @@ package com.example.watchdogs.ModeloOpcionalDog
 
 import com.google.gson.annotations.SerializedName
 
-data class Message(
+data class DogList(
     @SerializedName("affenpinscher")
     val affenpinscher: List<Any>,
     @SerializedName("african")

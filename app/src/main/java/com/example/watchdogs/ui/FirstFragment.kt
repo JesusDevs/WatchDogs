@@ -20,8 +20,10 @@ import com.example.watchdogs.databinding.FragmentFirstBinding
 import com.example.watchdogs.viewmodel.DogBreedViewmodel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import okhttp3.Dispatcher
 
 class FirstFragment : Fragment() {
 
@@ -41,15 +43,11 @@ class FirstFragment : Fragment() {
 
         //  instnaciar adapter , recycler
         val adapter = DogAdapter()
-        //instanciar recycler,observar datades de internet ,set adapter
-        setAdapter(adapter)
 
 
-        //crear courutina
-        lifecycleScope.launch(Dispatchers.IO) {
-
-            //get data pendiente crear metodo para pasar variables
-            mViewModel.getDogoData(10, 10, 0)
+        lifecycleScope.launch {
+            //get data pendiente crear metodo para pasar variables Hard Code para test
+            mViewModel.getDogoData(10, 30, 0)
 
         }
         //observar data y setear adapter
@@ -62,6 +60,23 @@ class FirstFragment : Fragment() {
                 Log.d("DATOS", "$it")
             }
         })
+
+        //instanciar recycler,observar datades de internet ,set adapter
+        setAdapter(adapter)
+        adapter.selectedItem().observe(viewLifecycleOwner, Observer {
+            //pasando data second fr
+            val bundle = Bundle()
+            bundle.putString("name",it.name)
+            bundle.putString("breedFor",it.bredFor)
+            bundle.putString("img", it.image.url)
+            bundle.putString("lifeSpan",it.lifeSpan)
+            bundle.putString("origin",it.origin)
+            bundle.putInt("idBreed",it.id)
+
+            //crear metodo id para traer mas fotos u otra consulta luego del Onclick
+
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,bundle)
+        })
     }
 
 
@@ -71,7 +86,6 @@ class FirstFragment : Fragment() {
         //reycler
         setRecyclerView(adapter)
         //pasar dato seleccionado al fragment detail
-        selectItemFromAdapter(adapter)
 
 
     }
@@ -87,24 +101,10 @@ class FirstFragment : Fragment() {
         }
 
     private fun selectItemFromAdapter(adapter: DogAdapter) {
-        adapter.selectedItem().observe(viewLifecycleOwner, Observer {
-            //pasando data second fr
-            val bundle = Bundle()
-            bundle.putString("name",it.name)
-            bundle.putString("breedFor",it.bredFor)
-            bundle.putString("img", it.image.url)
-            bundle.putString("lifeSpan",it.lifeSpan)
-            bundle.putString("origin",it.origin)
-            bundle.putInt("idBreed",it.id)
 
-          //crear metodo id para traer mas fotos u otra consulta luego del Onclick
-
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        })
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-
     }
 }
